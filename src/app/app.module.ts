@@ -5,18 +5,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { RouterModule } from '@angular/router';
-
-// Array of routes
-const routes = [
-  { path: '', component: HomeComponent },
-  { path: 'user/:id', component: UserComponent },
-  { path: 'user/:id/posts', component: PostsComponent },
-];
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, UserComponent, PostsComponent],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
