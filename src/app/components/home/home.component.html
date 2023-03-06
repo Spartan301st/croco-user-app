@@ -1,7 +1,12 @@
-<h1>Home page - all users</h1>
-<!-- {{ users | json }} -->
-<div>
-  <button *ngFor="let user of usersIdsNames" routerLink="/user/{{ user.id }}">
-    <span>{{ user.name }}</span>
-  </button>
-</div>
+<main class="users__mainContainer max-width">
+  <h1 class="users__mainHeader">All users</h1>
+  <section class="users__userBtnsContainer">
+    <button
+      class="users__userBtn"
+      *ngFor="let user of usersIdsNames"
+      routerLink="/user/{{ user.id }}"
+    >
+      {{ user.name }}
+    </button>
+  </section>
+</main>

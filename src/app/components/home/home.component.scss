@@ -1,0 +1,47 @@
+@import "../../../styles.scss";
+
+.users {
+    &__mainContainer {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+    &__mainHeader {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    &__userBtnsContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+    &__userBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: $primary-white-blue;
+        color: $primary-dark-blue;
+        font-size: 1.2rem;
+        opacity: 0.7;
+        transition-duration: 1s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .users {
+        &__userBtnsContainer {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .users {
+        &__userBtnsContainer {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

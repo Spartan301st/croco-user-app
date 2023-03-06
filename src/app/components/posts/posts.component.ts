@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
+import { IPost } from 'src/app/interfaces/post';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  postsData: any;
+  postsData: IPost[] | undefined;
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService

@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+// font-family: 'Montserrat', sans-serif;
+
+/* Define a custom button class */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// variables
+$primary-dark-blue: #181F53;
+$primary-white-blue: #9FA4C4;
+$primary-crimson: #D14081;
+$primary-yellow: #F3F9D2;
+$primary-turquoise: #0FF4C6;
+
+
+body {
+    background-color: $primary-dark-blue;
+    color: $primary-white-blue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+main {
+    width: 100vw;
+    min-height: 100vh;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-crimson;
+}
+
+.max-width {
+    max-width: 1280px;
+    position: relative;
+}
+
+.btn--return {
+    background-color: $primary-crimson;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    opacity: 0.8;
+    transition-duration: 1s;
+    &:hover {
+        opacity: 1;
+    }
+    
+}

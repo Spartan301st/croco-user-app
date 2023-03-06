@@ -1,32 +1,56 @@
-<h1>Particular User page</h1>
-<!-- <p>User id: {{ userId }}</p> -->
-<div>
-  <div>
-    <h2>First Name: {{ userData.name }}</h2>
-    <h3>Username: {{ userData.username }}</h3>
-    <h4>Email: {{ userData.email }}</h4>
-    <h4>
-      Address:
-      <span>{{ userData.address.suite }}</span
-      >, <span>{{ userData.address.street }} St.</span>,
-      <span>{{ userData.address.city }}</span
-      >,
-      <span>({{ userData.address.zipcode }})</span>
-    </h4>
-    <h4>Phone: {{ userData.phone }}</h4>
-    <h4>
-      Website:
-      <a href="#">{{ userData.website }}</a>
-    </h4>
-    <h4>
-      Company:
-      <br />
-      <span>{{ userData.company.name }}</span>
-      <br />
-      <span>{{ userData.company.bs }}</span>
-      <br />
-      <span>{{ userData.company.catchPhrase }}</span>
-    </h4>
-  </div>
-  <button routerLink="/user/{{ userData.id }}/posts">User's Posts</button>
-</div>
+<main class="user__mainContainer max-width">
+  <button class="btn--return" routerLink="/users">⇤ Return back</button>
+  <h1 class="user__mainHeader">User Page</h1>
+  <section class="user__infoContainer">
+    <div class="user__basicInfo">
+      <h2 class="user__basicInfoHeader">Basic info:</h2>
+      <h3 class="user__fullName">
+        <span>Full Name:</span><span>{{ userData?.name }}</span>
+      </h3>
+      <h3 class="user__userName">
+        <span>Username:</span><span>{{ userData?.username }}</span>
+      </h3>
+    </div>
+    <address class="user__contactInfo">
+      <h2 class="user__contactInfoHeader">Contact Info:</h2>
+      <h4 class="user__email">
+        <span>Email:</span><span>{{ userData?.email }}</span>
+      </h4>
+      <h4 class="user__address">
+        <span>Address:</span
+        ><span
+          >{{ (userData?.address)!.suite }},
+          {{ (userData?.address)!.street }} St.,
+          {{ (userData?.address)!.city }}, ({{
+            (userData?.address)!.zipcode
+          }})</span
+        >
+      </h4>
+      <h4 class="user__phone">
+        <span>Phone:</span><span>{{ userData?.phone }}</span>
+      </h4>
+      <h4 class="user__website">
+        <span>Website:</span
+        ><span
+          ><a href="#">{{ userData?.website }}</a></span
+        >
+      </h4>
+    </address>
+    <div class="user__companyInfo">
+      <h2 class="user__companyInfoHeader">Company Info:</h2>
+      <h4 class="user__companyName">
+        <span>Name</span><span>{{ (userData?.company)!.name }}</span>
+      </h4>
+      <h4 class="user__companyFields">
+        <span>Business Fields</span><span>{{ (userData?.company)!.bs }}</span>
+      </h4>
+      <h4 class="user__companyPhrase">
+        <span>Catch Phrase</span
+        ><span>{{ (userData?.company)!.catchPhrase }}</span>
+      </h4>
+    </div>
+  </section>
+  <button class="user__postsBtn" routerLink="/user/{{ userData?.id }}/posts">
+    User's Posts
+  </button>
+</main>

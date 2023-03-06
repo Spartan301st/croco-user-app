@@ -10,15 +10,13 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  // userId!: number;
-  userData!: IUser;
+  userData: IUser | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService
   ) {}
   ngOnInit(): void {
-    // this.userId = +this.route.snapshot.paramMap.get('id')!;
     const userId = +this.route.snapshot.paramMap.get('id')!;
     this.dataService
       .getAUser(userId)

@@ -12,7 +12,7 @@ interface userIdName {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  usersIdsNames: userIdName[] = [];
+  usersIdsNames: userIdName[] | undefined;
   constructor(private dataService: DataService) {}
   ngOnInit(): void {
     this.dataService
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         map((data) => data.map((user) => ({ id: user.id, name: user.name })))
       )
       .subscribe(
-        (names) => (this.usersIdsNames = [...this.usersIdsNames, ...names])
+        (names) => (this.usersIdsNames = [...names])
       );
   }
 }
