@@ -1,1 +1,6 @@
 <h1>Particular User's all posts page</h1>
+<!-- {{ postsData | json }} -->
+<div *ngFor="let post of postsData">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+</div>

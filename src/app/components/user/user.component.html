@@ -1,1 +1,32 @@
 <h1>Particular User page</h1>
+<!-- <p>User id: {{ userId }}</p> -->
+<div>
+  <div>
+    <h2>First Name: {{ userData.name }}</h2>
+    <h3>Username: {{ userData.username }}</h3>
+    <h4>Email: {{ userData.email }}</h4>
+    <h4>
+      Address:
+      <span>{{ userData.address.suite }}</span
+      >, <span>{{ userData.address.street }} St.</span>,
+      <span>{{ userData.address.city }}</span
+      >,
+      <span>({{ userData.address.zipcode }})</span>
+    </h4>
+    <h4>Phone: {{ userData.phone }}</h4>
+    <h4>
+      Website:
+      <a href="#">{{ userData.website }}</a>
+    </h4>
+    <h4>
+      Company:
+      <br />
+      <span>{{ userData.company.name }}</span>
+      <br />
+      <span>{{ userData.company.bs }}</span>
+      <br />
+      <span>{{ userData.company.catchPhrase }}</span>
+    </h4>
+  </div>
+  <button routerLink="/user/{{ userData.id }}/posts">User's Posts</button>
+</div>
